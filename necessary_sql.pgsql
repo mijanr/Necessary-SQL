@@ -185,3 +185,6 @@ SELECT
     '2019-01-01'::date + (random() * ('2020-12-31'::date - '2019-01-01'::date))::int AS order_date,
     (100 + floor(random() * 900)) AS total_amount
 FROM generate_series(1, 1000);
+
+-- check how many orders are there
+SELECT COUNT(*) FROM Sales.orders;
