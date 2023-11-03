@@ -28,3 +28,18 @@ ORDER BY
     total_amount DESC
 LIMIT 5;
 
+
+-- INNER JOIN
+SELECT 
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    o.total_amount
+FROM
+    sales.customers c
+INNER JOIN
+    sales.orders o ON c.customer_id = o.customer_id
+ORDER BY
+    c.customer_id;
+
+
