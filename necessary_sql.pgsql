@@ -156,3 +156,21 @@ VALUES
 -- check how many customers are there
 SELECT COUNT(*) FROM Sales.customers;
 
+-- Check if there is any duplicate values in the customers table.
+SELECT 
+    first_name, 
+    last_name, 
+    email, 
+    COUNT(*) AS count
+FROM
+    Sales.customers
+GROUP BY
+    first_name, 
+    last_name, 
+    email
+HAVING
+    COUNT(*) > 1
+ORDER BY
+    count DESC
+;
+
