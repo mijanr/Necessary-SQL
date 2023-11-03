@@ -174,3 +174,14 @@ ORDER BY
     count DESC
 ;
 
+-- populate the orders 
+-- There are 128 customers, so we will randomly select 128 customer_id
+-- randomly select order_date from 2019-01-01 to 2020-12-31
+-- randomly select total_amount from 100 to 1000
+INSERT INTO 
+    Sales.orders (customer_id, order_date, total_amount)
+SELECT
+    (1 + floor(random() * 128)) AS customer_id,
+    '2019-01-01'::date + (random() * ('2020-12-31'::date - '2019-01-01'::date))::int AS order_date,
+    (100 + floor(random() * 900)) AS total_amount
+FROM generate_series(1, 1000);
