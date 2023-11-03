@@ -91,3 +91,31 @@ WHERE
     customer_id IN (8 , 16, 32)
 ORDER BY
     customer_id;
+
+
+--- Common Table Expression (CTE)
+--- CTEs are temporary result sets that are defined within the execution scope of a single SQL statement
+WITH cte_sales AS (
+    SELECT 
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        o.total_amount
+    FROM
+        sales.customers c
+    LEFT JOIN
+        sales.orders o ON c.customer_id = o.customer_id
+)
+SELECT 
+    first_name,
+    last_name,
+    SUM(total_amount) AS total_amount
+FROM
+    cte_sales
+GROUP BY
+    first_name,
+    last_name
+ORDER BY
+    total_amount DESC
+LIMIT 5;
+
