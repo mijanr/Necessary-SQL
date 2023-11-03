@@ -32,3 +32,22 @@ GROUP BY
 ORDER BY
     EXTRACT(MONTH FROM order_date) ASC;
 
+--- Top 5 customers by total sales
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    SUM(o.total_amount) AS total_sales
+FROM
+    sales.orders o
+INNER JOIN
+    sales.customers c
+ON
+    o.customer_id = c.customer_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name
+ORDER BY
+    total_sales DESC
+LIMIT 5;
