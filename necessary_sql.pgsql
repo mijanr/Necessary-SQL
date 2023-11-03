@@ -153,3 +153,6 @@ VALUES
     ('Aaliyah', 'Jackson', 'aaliyah.jackson@gmail.com')
 ;
 
+-- check how many customers are there
+SELECT COUNT(*) FROM Sales.customers;
+
