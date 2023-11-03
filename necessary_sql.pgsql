@@ -188,3 +188,21 @@ FROM generate_series(1, 1000);
 
 -- check how many orders are there
 SELECT COUNT(*) FROM Sales.orders;
+
+-- check if there is any duplicate values in the orders table.
+SELECT 
+    customer_id, 
+    order_date, 
+    total_amount, 
+    COUNT(*) AS count
+FROM
+    Sales.orders
+GROUP BY
+    customer_id, 
+    order_date, 
+    total_amount
+HAVING  
+    COUNT(*) > 1    
+ORDER BY
+    count DESC
+;
