@@ -119,3 +119,30 @@ ORDER BY
     total_amount DESC
 LIMIT 5;
 
+--- TEMPORARY TABLE
+--- Temporary tables are created in the tempdb database
+--- Temporary tables are automatically dropped when they are no longer used
+CREATE TEMPORARY TABLE temp_sales AS (
+    SELECT 
+        c.customer_id,
+        c.first_name,
+        c.last_name,
+        o.total_amount
+    FROM
+        sales.customers c
+    LEFT JOIN
+        sales.orders o ON c.customer_id = o.customer_id
+);
+
+SELECT 
+    first_name,
+    last_name,
+    SUM(total_amount) AS total_amount
+FROM
+    temp_sales
+GROUP BY
+    first_name,
+    last_name
+ORDER BY
+    total_amount DESC
+LIMIT 5;
