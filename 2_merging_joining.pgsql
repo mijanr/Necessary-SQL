@@ -146,3 +146,7 @@ GROUP BY
 ORDER BY
     total_amount DESC
 LIMIT 5;
+
+--- CTEs are useful when you want to reuse the result set multiple times in a query
+--- Temporary tables are useful when you want to reuse the result set multiple times in multiple queries
+--- Temporary tables are also useful when you want to index and optimize the result set
