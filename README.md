@@ -13,7 +13,7 @@ There will be two tables called `customers` and `orders` in the `Sales` schema.
 
 `customers` table:
 ```sql
-CREATE TABLE my_schema.customers (
+CREATE TABLE sales.customers (
     customer_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
@@ -22,9 +22,9 @@ CREATE TABLE my_schema.customers (
 ```
 `orders` table:
 ```sql
-CREATE TABLE my_schema.orders (
+CREATE TABLE sales.orders (
     order_id SERIAL PRIMARY KEY,
-    customer_id INT REFERENCES my_schema.customers(customer_id),
+    customer_id INT REFERENCES sales.customers(customer_id),
     order_date DATE,
     total_amount NUMERIC(10, 2)
 );
