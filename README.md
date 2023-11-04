@@ -1,5 +1,5 @@
 # Necessary SQL
-This repository contains common SQL queries and tasks that are used in data analysis and data science. The queries are written in PostgreSQL.
+This repository contains common SQL features used in data analysis tasks. The queries are written in PostgreSQL.
 
 ## Creating Schema
 We will name the schema as `Sales` in the following examples.
@@ -13,7 +13,7 @@ There will be two tables called `customers` and `orders` in the `Sales` schema.
 
 `customers` table:
 ```sql
-CREATE TABLE sales.customers (
+CREATE TABLE IF NOT EXISTS sales.customers (
     customer_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
@@ -22,7 +22,7 @@ CREATE TABLE sales.customers (
 ```
 `orders` table:
 ```sql
-CREATE TABLE sales.orders (
+CREATE TABLE IF NOT EXISTS sales.orders (
     order_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES sales.customers(customer_id),
     order_date DATE,
