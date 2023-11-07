@@ -78,6 +78,10 @@ VALUES
 
 This list is taken from [Andre Jones](https://www.linkedin.com/in/andrew-jones-dsi/) LinkedIn profile.
 
+## SQL JOINS
+The following diagram shows the different SQL JOINs:
+![SQL JOINS](images/PostgreSQL-Joins.png)
+
 
 
 
