@@ -82,8 +82,14 @@ This list is taken from [Andre Jones](https://www.linkedin.com/in/andrew-jones-d
 The following diagram shows the different SQL JOINs:
 ![SQL JOINS](images/PostgreSQL-Joins.png)
 
-
-
-
+## Requirements
+`requirements.yml` file contains the necessary packages to run the Jupyter Notebook. To install the packages, run the following command:
+```bash
+conda env create -f requirements.yml
+```
+`requirements.yml` is generated using the following command:
+```bash
+conda env export --no-builds | grep -v "prefix" > requirements.yml
+```
 
 
