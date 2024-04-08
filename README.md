@@ -1,4 +1,4 @@
-# Necessary SQL
+# Necessary-SQL
 This repository contains common SQL features used in data analysis tasks. The queries are written in PostgreSQL.
 
 ## Creating Schema
