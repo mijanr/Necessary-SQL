@@ -87,9 +87,4 @@ The following diagram shows the different SQL JOINs:
 ```bash
 conda env create -f requirements.yml
 ```
-`requirements.yml` is generated using the following command:
-```bash
-conda env export --no-builds | grep -v "prefix" > requirements.yml
-```
-
 
