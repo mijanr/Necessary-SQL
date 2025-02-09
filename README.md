@@ -85,6 +85,6 @@ The following diagram shows the different SQL JOINs:
 ## Requirements
 `requirements.yml` file contains the necessary packages to run the Jupyter Notebook. To install the packages, run the following command:
 ```bash
-conda env create -f requirements.yml
+conda env create -f environment.yml
 ```
 
