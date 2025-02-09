@@ -1,0 +1,14 @@
+name: sql
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - ipykernel
+  - matplotlib
+  - numpy
+  - pandas
+  - plotly
+  - seaborn
+  - sqlalchemy
+  - psycopg2
